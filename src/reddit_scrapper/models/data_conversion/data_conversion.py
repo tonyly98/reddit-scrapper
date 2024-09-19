@@ -1,7 +1,6 @@
 import json
 import csv
 
-
 def export_json(submission_list: list):
     jsonInfo = json.dumps(submission_list, indent=4, ensure_ascii=False)
 
