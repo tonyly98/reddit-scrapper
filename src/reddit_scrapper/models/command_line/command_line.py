@@ -15,13 +15,13 @@ def parser():
     # Client secret from reddit app
     parser.add_argument(
         "-secret", "--client_secret", metavar="client_secret",
-        required=True, help= "The client ID of your app"
+        required=True, help= "The client secret of your app"
     )
 
     # Agent name for reddit 
     parser.add_argument(
         "-agent", "--user_agent", metavar="user_agent",
-        required=True, help= "The client ID of your app"
+        required=True, help= "The client name of your app"
     )
 
     # Subbreddit to scrape from
@@ -39,7 +39,7 @@ def parser():
     # Time frame (only need for top and controversial sort oders)
     parser.add_argument(
         "-frame", "--time_frame", metavar="time_frame",
-        required=False, default="month",
+        required=False, default="month", choices=["all", "day", "hour", "month", "week", "year"],
         help= 'Time frame, only need for top and controversial sort oders, default is month ("all", "day", "hour", "month", "week", or "year")'
     )
 
