@@ -17,11 +17,12 @@ def main():
     subreddits = subreddits_parser(args, reddit)
 
     for submission in subreddits:
+        author = "deleted_user" if submission.author is None else submission.author.name
         temp_dict = {
             "subreddit": submission.subreddit.display_name,
             "id": submission.id,
             "date": datetime.fromtimestamp(submission.created_utc, timezone.utc).strftime('%Y-%m-%d %H:%M:%S'),
-            "author": submission.author.name,
+            "author": author,
             "title": submission.title,
             "score": submission.score,
             "url": submission.url
